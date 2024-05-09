@@ -17,14 +17,16 @@ class _HomeScreenState extends State<HomeScreen> {
           IconButton(
             onPressed: () {},
             icon: const Icon(
-              Icons.grid_on,
-              size: 30,
+              Icons.dashboard,
+              size: 40,
+              color: Color.fromARGB(255, 216, 169, 13),
             ),
           ),
           SizedBox(width: 30),
           Container(
             height: 50,
-            width: 150,
+            width: 140,
+            
             child: const Center(
               child: Text(
                 "Home",
@@ -37,18 +39,19 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           SizedBox(width: 50),
           Container(
-            height: 50,
-            width: 50,
+            height: 45,
+            width: 45,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(90),
-              color: Colors.red,
+              color: Color.fromARGB(255, 255, 0, 0),
             ),
             child: Center(
               child: IconButton(
                 onPressed: () {},
                 icon: const Icon(
-                  Icons.store,
-                  size: 40,
+                  Icons.shop,
+                  size: 30,
+                  color: Color.fromARGB(255, 255, 255, 255),
                 ),
               ),
             ),
@@ -57,8 +60,8 @@ class _HomeScreenState extends State<HomeScreen> {
           Container(
             height: 50,
             width: 50,
-            child: Image.network(
-              "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0QLPrRABkXLir2od2GFAcoU7Ya_bnI3SW4g&usqp=CAU",
+            child: Image.asset(
+              "asset/images/profileboy.png",
               fit: BoxFit.cover,
             ),
           ),
