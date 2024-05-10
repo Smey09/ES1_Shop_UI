@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/page/All.dart';
 import 'package:flutter_application_1/page/Glasses.dart';
+import 'package:flutter_application_1/page/Profile.dart';
 import 'package:flutter_application_1/page/hodie.dart';
 import 'package:flutter_application_1/page/pants.dart';
 import 'package:flutter_application_1/page/shose.dart';
+import 'package:flutter_application_1/page/slide.dart';
 import 'package:flutter_application_1/page/watch.dart';
-
 class BodyScreen extends StatefulWidget {
   const BodyScreen({super.key});
 
@@ -21,29 +21,29 @@ class _BodyScreenState extends State<BodyScreen> {
         FocusScope.of(context).unfocus();
       },
       child: Scaffold(
-        // backgroundColor: Colors.green,
-        
+        // backgroundColor: const Color.fromARGB(255, 175, 241, 244),
+
         body: SingleChildScrollView(
+          // scrollDirection: Axis.horizontal,
+          // padding: const EdgeInsets.symmetric(horizontal: 16.0),
           child: Container(
-          decoration: BoxDecoration(
-            image: DecorationImage(
-                    // Replace with your image provider (e.g., AssetImage, NetworkImage)
-                    image: NetworkImage("https://www.pexels.com/photo/lighthouse-during-golden-hour-1535162/"),
-                    fit: BoxFit.cover, // Adjust the fit as needed
-                  ),
-          // gradient: LinearGradient(
-          //   colors: [
-          //       Colors.purple.shade200,
-          //       Colors.pink.shade200,
-          //       Colors.grey.shade200,
-          //       Colors.white,
-              
-              
-          //     ],
-          //   begin: Alignment.topCenter,
-          //   end: Alignment.bottomCenter,
-          // ),
-        ),
+            decoration: const BoxDecoration(
+              // image: DecorationImage(
+              //         // Replace with your image provider (e.g., AssetImage, NetworkImage)
+              //         image: NetworkImage("https://www.pexels.com/photo/lighthouse-during-golden-hour-1535162/"),
+              //         fit: BoxFit.cover, // Adjust the fit as needed
+              //       ),
+              gradient: LinearGradient(
+                colors: [
+                  Color.fromARGB(255, 232, 215, 235),
+                  Color.fromARGB(255, 239, 179, 199),
+                  Color.fromARGB(255, 237, 226, 226),
+                  Colors.white,
+                ],
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+              ),
+            ),
             child: Column(
               children: [
                 Padding(
@@ -80,32 +80,124 @@ class _BodyScreenState extends State<BodyScreen> {
                     ),
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 20, right: 20),
-                  child: Container(
-                    height: 150,
-                    width: 600,
-                    decoration: BoxDecoration(
-                      border: Border.all(
-                        color: Colors.black,
-                        width: 2.0,
-                      ),
-                      borderRadius: BorderRadius.circular(20.0),
-                    ),
-                    child: Padding(
-                      padding: EdgeInsets.zero,
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(20.0),
-                        child: Image.network(
-                          "https://th.bing.com/th/id/OIP.J-6HcQwYLf_Mr1mx-rkvMgHaEK?w=302&h=180&c=7&r=0&o=5&dpr=2.5&pid=1.7",
-                          fit: BoxFit.cover,
-                          width: double.infinity,
-                          height: double.infinity,
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
+                // slide: Slideshow(context: context),
+                const Slideshow(),
+                // Add padding
+                // Row(
+                //   children: [
+                //     Container(
+                //       padding: EdgeInsets.all(20),
+                //       height: 250,
+                //       child: ImageSlideshow(
+                //         indicatorColor: Colors.blue,
+                //         onPageChanged: (value) => debugPrint(
+                //             'Page changed: $value'), // Use arrow function for simpler syntax
+                //         autoPlayInterval: 3000,
+                //         isLoop: true,
+                //         children: [
+                //           Image.asset(
+                //             'assets/icons/Footware.png', // Assuming assets folder is named "assets"
+                //             fit: BoxFit.cover,
+                //           ),
+                //           Image.asset(
+                //             'assets/icons/Footware.png',
+                //             fit: BoxFit.cover,
+                //           ),
+                //           Image.asset(
+                //             'assets/icons/Footware.png',
+                //             fit: BoxFit.cover,
+                //           ),
+                //         ],
+                //       ),
+                //     ),
+                //   ],
+                // ),
+
+                // Row(
+                //   children: [
+                //     Expanded(
+                //       child: SingleChildScrollView(
+                //         scrollDirection: Axis.horizontal,
+                //         child: Row(
+                //           children: [
+                //             GestureDetector(
+                //               onTap: () {
+                //                 Navigator.push(
+                //                   context,
+                //                   MaterialPageRoute(
+                //                       builder: (context) => const shoses()),
+                //                 );
+                //                 print("Container pressed!");
+                //               },
+                //         //       child: Padding(
+                //         // padding: const EdgeInsets.only(left: 20, right: 20),
+                //               child: Container(
+                //                 height: 150,
+                //                 width: 360,
+                //                 margin: const EdgeInsets.all(10.0),
+                //                 decoration: BoxDecoration(
+                //                   border: Border.all(
+                //                     color: Colors.black,
+                //                     width: 2.0,
+                //                   ),
+                //                   borderRadius: BorderRadius.circular(20.0),
+                //                 ),
+                //                 child: Padding(
+                //                   padding: EdgeInsets.zero,
+                //                   child: ClipRRect(
+                //                     borderRadius: BorderRadius.circular(20.0),
+                //                     child: Image.network(
+                //                       "https://th.bing.com/th/id/OIP.J-6HcQwYLf_Mr1mx-rkvMgHaEK?w=302&h=180&c=7&r=0&o=5&dpr=2.5&pid=1.7",
+                //                       fit: BoxFit.cover,
+                //                       width: double.infinity,
+                //                       height: double.infinity,
+                //                     ),
+                //                   ),
+                //                 ),
+                //               ),
+                //             ),
+                //             GestureDetector(
+                //               onTap: () {
+                //                 Navigator.push(
+                //                   context,
+                //                   MaterialPageRoute(
+                //                       builder: (context) => const Hodies()),
+                //                 );
+                //                 print("Container pressed!");
+                //               },
+                //         //       child: Padding(
+                //         // padding: const EdgeInsets.only(left: 20, right: 20),
+                //               child: Container(
+                //                 height: 150,
+                //                 width: 360,
+                //                 decoration: BoxDecoration(
+                //                   border: Border.all(
+                //                     color: Colors.black,
+                //                     width: 2.0,
+                //                   ),
+                //                   borderRadius: BorderRadius.circular(20.0),
+                //                 ),
+                //                 child: Padding(
+                //                   padding: EdgeInsets.zero,
+                //                   child: ClipRRect(
+                //                     borderRadius: BorderRadius.circular(20.0),
+                //                     child: Image.network(
+                //                       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFx90Svm6r_ORNO1Kp-BscrYYOst8OOgHFIA&s",
+                //                       fit: BoxFit.cover,
+                //                       width: double.infinity,
+                //                       height: double.infinity,
+                //                     ),
+                //                   ),
+                //                 ),
+                //               ),
+
+                //             ),
+                //           ],
+                //         ),
+                //       ),
+                //     ),
+                //   ],
+                // ),
                 Row(
                   children: [
                     Expanded(
@@ -118,41 +210,41 @@ class _BodyScreenState extends State<BodyScreen> {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => const All()),
+                                      builder: (context) => const profile()),
                                 );
                                 print("Container pressed!");
                               },
-                              child:Container(
-                              width: 90, // Adjust width if needed
-                              height: 50,
-                              margin: const EdgeInsets.all(10.0),
-                              decoration: BoxDecoration(
-                                border: Border.all(
-                                  color: Colors.black,
-                                  width: 2.0,
+                              child: Container(
+                                width: 90, // Adjust width if needed
+                                height: 50,
+                                margin: const EdgeInsets.all(10.0),
+                                decoration: BoxDecoration(
+                                  border: Border.all(
+                                    color: Colors.black,
+                                    width: 2.0,
+                                  ),
+                                  borderRadius: BorderRadius.circular(20.0),
+                                  color:
+                                      const Color.fromARGB(255, 231, 239, 243),
                                 ),
-                                borderRadius: BorderRadius.circular(20.0),
-                                color: const Color.fromARGB(255, 231, 239, 243),
-                              ),
-                              child: const Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                children: [
-                                  Icon(
-                                    Icons.store,
-                                    size: 35,
-                                  ),
-                                  Text(
-                                    "All",
-                                    style: TextStyle(
-                                        fontSize: 20,
-                                        fontWeight: FontWeight.bold),
-                                  ),
-                                ],
+                                child: const Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
+                                  children: [
+                                    Icon(
+                                      Icons.store,
+                                      size: 35,
+                                    ),
+                                    Text(
+                                      "All",
+                                      style: TextStyle(
+                                          fontSize: 20,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
-                            ),
-                            
-                            
                             GestureDetector(
                               onTap: () {
                                 Navigator.push(
@@ -162,31 +254,33 @@ class _BodyScreenState extends State<BodyScreen> {
                                 );
                                 print("Container pressed!");
                               },
-                              child:  Container(
-                              width: 150, // Adjust width if needed
-                              height: 50,
-                              margin: const EdgeInsets.all(10.0),
-                              decoration: BoxDecoration(
-                                border: Border.all(
-                                  color: Colors.black,
-                                  width: 2.0,
-                                ),
-                                borderRadius: BorderRadius.circular(20.0),
-                                color: const Color.fromARGB(255, 231, 239, 243),
-                              ),
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                children: [
-                                  Image.asset("asset/icons/Footware.png"),
-                                  const Text(
-                                    "Footware",
-                                    style: TextStyle(
-                                      fontSize: 18,
-                                    ),
+                              child: Container(
+                                width: 150, // Adjust width if needed
+                                height: 50,
+                                margin: const EdgeInsets.all(10.0),
+                                decoration: BoxDecoration(
+                                  border: Border.all(
+                                    color: Colors.black,
+                                    width: 2.0,
                                   ),
-                                ],
+                                  borderRadius: BorderRadius.circular(20.0),
+                                  color:
+                                      const Color.fromARGB(255, 231, 239, 243),
+                                ),
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
+                                  children: [
+                                    Image.asset("asset/icons/Footware.png"),
+                                    const Text(
+                                      "Footware",
+                                      style: TextStyle(
+                                        fontSize: 18,
+                                      ),
+                                    ),
+                                  ],
+                                ),
                               ),
-                            ),
                             ),
                             GestureDetector(
                               onTap: () {
@@ -197,35 +291,36 @@ class _BodyScreenState extends State<BodyScreen> {
                                 );
                                 print("Container pressed!");
                               },
-                              child:Container(
-                              width: 100,
-                              height: 50,
-                              margin: const EdgeInsets.all(10.0),
-                              decoration: BoxDecoration(
-                                border: Border.all(
-                                  color: Colors.black,
-                                  width: 2.0,
+                              child: Container(
+                                width: 100,
+                                height: 50,
+                                margin: const EdgeInsets.all(10.0),
+                                decoration: BoxDecoration(
+                                  border: Border.all(
+                                    color: Colors.black,
+                                    width: 2.0,
+                                  ),
+                                  borderRadius: BorderRadius.circular(20.0),
+                                  color:
+                                      const Color.fromARGB(255, 231, 239, 243),
                                 ),
-                                borderRadius: BorderRadius.circular(20.0),
-                                color: const Color.fromARGB(255, 231, 239, 243),
-                              ),
-                              child: const Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                children: [
-                                  Icon(
-                                    Icons.watch,
-                                    size: 35,
-                                  ),
-                                  Text(
-                                    "watch",
-                                    style: TextStyle(
-                                      fontSize: 18,
+                                child: const Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
+                                  children: [
+                                    Icon(
+                                      Icons.watch,
+                                      size: 35,
                                     ),
-                                  ),
-                                ],
+                                    Text(
+                                      "watch",
+                                      style: TextStyle(
+                                        fontSize: 18,
+                                      ),
+                                    ),
+                                  ],
+                                ),
                               ),
-                            ),
-            
                             ),
                             GestureDetector(
                               onTap: () {
@@ -236,41 +331,40 @@ class _BodyScreenState extends State<BodyScreen> {
                                 );
                                 print("Container pressed!");
                               },
-                              child:Container(
-                              width: 150,
-                              height: 50,
-                              margin: const EdgeInsets.all(10.0),
-                              decoration: BoxDecoration(
-                                border: Border.all(
-                                  color: Colors.black,
-                                  width: 2.0,
-                                ),
-                                borderRadius: BorderRadius.circular(20.0),
-                                color: const Color.fromARGB(255, 231, 239, 243),
-                              ),
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                children: [
-                                  // Icon(
-                                  //   Icons.chair,
-                                  //   size: 35,
-                                  // ),
-                                  Image.asset("asset/icons/Glasses.png"),
-                                  const Text(
-                                    "Glasses",
-                                    style: TextStyle(
-                                      fontSize: 18,
-                                    ),
+                              child: Container(
+                                width: 150,
+                                height: 50,
+                                margin: const EdgeInsets.all(10.0),
+                                decoration: BoxDecoration(
+                                  border: Border.all(
+                                    color: Colors.black,
+                                    width: 2.0,
                                   ),
-                                ],
+                                  borderRadius: BorderRadius.circular(20.0),
+                                  color:
+                                      const Color.fromARGB(255, 231, 239, 243),
+                                ),
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
+                                  children: [
+                                    // Icon(
+                                    //   Icons.chair,
+                                    //   size: 35,
+                                    // ),
+                                    Image.asset("asset/icons/Glasses.png"),
+                                    const Text(
+                                      "Glasses",
+                                      style: TextStyle(
+                                        fontSize: 18,
+                                      ),
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
-            
-                            ),
-            
-                           
-                            
-                            // 
+
+                            //
                           ],
                         ),
                       ),
@@ -312,21 +406,218 @@ class _BodyScreenState extends State<BodyScreen> {
                     Column(
                       children: [
                         GestureDetector(
-                              onTap: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => const shoses()),
-                                );
-                                // print("Container pressed!");
-                              },
-                            child: Padding(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const shoses()),
+                            );
+                            // print("Container pressed!");
+                          },
+                          child: Padding(
+                            padding: const EdgeInsets.only(bottom: 10),
+                            child: Stack(
+                              children: [
+                                Container(
+                                  height: 250,
+                                  width: 180,
+                                  decoration: BoxDecoration(
+                                    border: Border.all(
+                                      color: Colors.black,
+                                      width: 2.0,
+                                    ),
+                                    borderRadius: BorderRadius.circular(20.0),
+                                  ),
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(20.0),
+                                    child: Image.asset(
+                                      "asset/images/air-force-2.png",
+                                      // fit: BoxFit.cover,
+                                      width: double.infinity,
+                                      height: double.infinity,
+                                    ),
+                                  ),
+                                ),
+                                Positioned(
+                                  right: 10.0,
+                                  top: 10.0,
+                                  child: Container(
+                                    padding: const EdgeInsets.all(5.0),
+                                    decoration: BoxDecoration(
+                                      color:
+                                          const Color.fromARGB(255, 83, 74, 81)
+                                              .withOpacity(0.5),
+                                      borderRadius: BorderRadius.circular(5.0),
+                                    ),
+                                    child: const Text(
+                                      "New",
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 18.0,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                Positioned(
+                                  right: 20.0,
+                                  // top: 10.0,
+                                  bottom: 5,
+                                  left: 20,
+                                  child: Container(
+                                    padding: const EdgeInsets.all(5.0),
+                                    decoration: BoxDecoration(
+                                      color: const Color.fromARGB(
+                                              255, 252, 205, 242)
+                                          .withOpacity(0.5),
+                                      borderRadius: BorderRadius.circular(5.0),
+                                    ),
+                                    child: const Column(
+                                      children: [
+                                        Column(
+                                          children: [
+                                            Text(
+                                              "Air Force 1",
+                                              style: TextStyle(
+                                                color: Colors.black,
+                                                fontSize: 18,
+                                                fontWeight: FontWeight.w600,
+                                              ),
+                                            ),
+                                            Row(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              children: [
+                                                Text(
+                                                  "\$170.69",
+                                                  style: TextStyle(
+                                                    color: Colors.black,
+                                                    fontSize: 18,
+                                                    fontWeight: FontWeight.w600,
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ],
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const watchs()),
+                            );
+                            // print("Container pressed!");
+                          },
+                          child: Padding(
+                            padding: const EdgeInsets.only(bottom: 10),
+                            child: Stack(
+                              children: [
+                                Container(
+                                  height: 260,
+                                  width: 180,
+                                  decoration: BoxDecoration(
+                                    border: Border.all(
+                                      color: Colors.black,
+                                      width: 2.0,
+                                    ),
+                                    borderRadius: BorderRadius.circular(20.0),
+                                  ),
+                                  child: Padding(
+                                    padding: EdgeInsets.zero,
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(20.0),
+                                      child: Image.asset(
+                                        "asset/images/iwatch.png",
+                                        // fit: BoxFit.cover,
+                                        width: double.infinity,
+                                        height: double.infinity,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                Positioned(
+                                  right: 10.0,
+                                  top: 10.0,
+                                  child: Container(
+                                    padding: const EdgeInsets.all(5.0),
+                                    decoration: BoxDecoration(
+                                      color:
+                                          const Color.fromARGB(255, 83, 74, 81)
+                                              .withOpacity(0.5),
+                                      borderRadius: BorderRadius.circular(5.0),
+                                    ),
+                                    child: const Text(
+                                      "Resell",
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 18.0,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                Positioned(
+                                  right: 20.0,
+                                  // top: 180,
+                                  bottom: 5,
+                                  left: 20,
+                                  child: Container(
+                                    padding: const EdgeInsets.all(5.0),
+                                    decoration: BoxDecoration(
+                                      color: const Color.fromARGB(
+                                              255, 252, 205, 242)
+                                          .withOpacity(0.5),
+                                      borderRadius: BorderRadius.circular(5.0),
+                                    ),
+                                    child: const Column(
+                                      children: [
+                                        Column(
+                                          children: [
+                                            Text(
+                                              "i Watch Ultra",
+                                              style: TextStyle(
+                                                color: Colors.black,
+                                                fontSize: 18,
+                                                fontWeight: FontWeight.w600,
+                                              ),
+                                            ),
+                                            Row(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              children: [
+                                                Text(
+                                                  "\$240.69",
+                                                  style: TextStyle(
+                                                    color: Colors.black,
+                                                    fontSize: 18,
+                                                    fontWeight: FontWeight.w600,
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ],
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        Padding(
                           padding: const EdgeInsets.only(bottom: 10),
                           child: Stack(
                             children: [
-                              
                               Container(
-                                height: 250,
+                                height: 240,
                                 width: 180,
                                 decoration: BoxDecoration(
                                   border: Border.all(
@@ -335,218 +626,20 @@ class _BodyScreenState extends State<BodyScreen> {
                                   ),
                                   borderRadius: BorderRadius.circular(20.0),
                                 ),
-                                child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(20.0),
-                                  child: Image.asset(
-                                    "asset/images/air-force-2.png",
-                                    // fit: BoxFit.cover,
-                                    width: double.infinity,
-                                    height: double.infinity,
-                                  ),
-                                ),
-                              ),
-                              Positioned(
-                                right: 10.0,
-                                top: 10.0,
-                                child: Container(
-                                  padding: const EdgeInsets.all(5.0),
-                                  decoration: BoxDecoration(
-                                    color: const Color.fromARGB(255, 83, 74, 81)
-                                        .withOpacity(0.5),
-                                    borderRadius: BorderRadius.circular(5.0),
-                                  ),
-                                  child: const Text(
-                                    "New",
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 18.0,
+                                child: Padding(
+                                  padding: EdgeInsets.zero,
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(20.0),
+                                    child: Image.asset(
+                                      "asset/images/cap.png",
+                                      // fit: BoxFit.cover,
+                                      width: double.infinity,
+                                      height: double.infinity,
                                     ),
                                   ),
                                 ),
                               ),
                               Positioned(
-                                right: 20.0,
-                                // top: 10.0,
-                                bottom: 5,
-                                left: 20,
-                                child: Container(
-                                  padding: const EdgeInsets.all(5.0),
-                                  decoration: BoxDecoration(
-                                    color: const Color.fromARGB(255, 252, 205, 242)
-                                        .withOpacity(0.5),
-                                    borderRadius: BorderRadius.circular(5.0),
-                                  ),
-                                  child: const Column(
-                                    children: [
-                                      Column(
-                                        children: [
-                                          Text(
-                                            "Air Force 1",
-                                            style: TextStyle(
-                                              color: Colors.black,
-                                              fontSize: 18,
-                                              fontWeight: FontWeight.w600,
-                                            ),
-                                          ),
-                                          Row(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.center,
-                                            children: [
-                                              Text(
-                                                "\$170.69",
-                                                style: TextStyle(
-                                                  color: Colors.black,
-                                                  fontSize: 18,
-                                                  fontWeight: FontWeight.w600,
-                                                ),
-                                              ),
-                                            ],
-                                          ),
-                                        ],
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      GestureDetector(
-                              onTap: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => const watchs()),
-                                );
-                                // print("Container pressed!");
-                              },
-                              child:Padding(
-                          padding: const EdgeInsets.only(bottom: 10),
-                          child:Stack(
-                            children: [ 
-                              Container(
-                              height: 260,
-                              width: 180,
-                              decoration: BoxDecoration(
-                                border: Border.all(
-                                  color: Colors.black,
-                                  width: 2.0,
-                                ),
-                                borderRadius: BorderRadius.circular(20.0),
-                              ),
-                              child: Padding(
-                                padding: EdgeInsets.zero,
-                                child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(20.0),
-                                  child: Image.asset(
-                                    "asset/images/iwatch.png",
-                                    // fit: BoxFit.cover,
-                                    width: double.infinity,
-                                    height: double.infinity,
-                                  ),
-                                ),
-                              ),
-                            ),
-                            Positioned(
-                                right: 10.0,
-                                top: 10.0,
-                                child: Container(
-                                  padding: const EdgeInsets.all(5.0),
-                                  decoration: BoxDecoration(
-                                    color: const Color.fromARGB(255, 83, 74, 81)
-                                        .withOpacity(0.5),
-                                    borderRadius: BorderRadius.circular(5.0),
-                                  ),
-                                  child: const Text(
-                                    "Resell",
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 18.0,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              Positioned(
-                                right: 20.0,
-                                // top: 180,
-                                bottom: 5,
-                                left: 20,
-                                child: Container(
-                                  padding: const EdgeInsets.all(5.0),
-                                  decoration: BoxDecoration(
-                                    color: const Color.fromARGB(255, 252, 205, 242)
-                                        .withOpacity(0.5),
-                                    borderRadius: BorderRadius.circular(5.0),
-                                  ),
-                                  child: const Column(
-                                    children: [
-                                      Column(
-                                        children: [
-                                          Text(
-                                            "i Watch Ultra",
-                                            style: TextStyle(
-                                              color: Colors.black,
-                                              fontSize: 18,
-                                              fontWeight: FontWeight.w600,
-                                            ),
-                                          ),
-                                          Row(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.center,
-                                            children: [
-                                              Text(
-                                                "\$240.69",
-                                                style: TextStyle(
-                                                  color: Colors.black,
-                                                  fontSize: 18,
-                                                  fontWeight: FontWeight.w600,
-                                                ),
-                                              ),
-                                            ],
-                                          ),
-                                        ],
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-            
-                            ],
-                          ),
-                         
-                        ),
-            
-                      ),
-                        
-                        
-                        Padding(
-                          padding: const EdgeInsets.only(bottom: 10),
-                          child: Stack(
-                            children: [ Container(
-                              height: 240,
-                              width: 180,
-                              decoration: BoxDecoration(
-                                border: Border.all(
-                                  color: Colors.black,
-                                  width: 2.0,
-                                ),
-                                borderRadius: BorderRadius.circular(20.0),
-                              ),
-                              child: Padding(
-                                padding: EdgeInsets.zero,
-                                child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(20.0),
-                                  child: Image.asset(
-                                    "asset/images/cap.png",
-                                    // fit: BoxFit.cover,
-                                    width: double.infinity,
-                                    height: double.infinity,
-                                  ),
-                                ),
-                              ),
-                            ),
-                            Positioned(
                                 right: 10.0,
                                 top: 10.0,
                                 child: Container(
@@ -573,8 +666,9 @@ class _BodyScreenState extends State<BodyScreen> {
                                 child: Container(
                                   padding: const EdgeInsets.all(5.0),
                                   decoration: BoxDecoration(
-                                    color: const Color.fromARGB(255, 252, 205, 242)
-                                        .withOpacity(0.5),
+                                    color:
+                                        const Color.fromARGB(255, 252, 205, 242)
+                                            .withOpacity(0.5),
                                     borderRadius: BorderRadius.circular(5.0),
                                   ),
                                   child: const Column(
@@ -617,320 +711,320 @@ class _BodyScreenState extends State<BodyScreen> {
                     Column(
                       children: [
                         GestureDetector(
-                              onTap: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => const Hodies()),
-                                );
-                                // print("Container pressed!");
-                              },
-                              child:Padding(
-                          padding: const EdgeInsets.only(bottom: 10),
-                          child: Stack(
-                          children: [
-                            Container(
-                            height: 300,
-                            width: 180,
-                            decoration: BoxDecoration(
-                              border: Border.all(
-                                color: Colors.black,
-                                width: 2.0,
-                              ),
-                              borderRadius: BorderRadius.circular(20.0),
-                            ),
-                            child: Padding(
-                              padding: EdgeInsets.zero,
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(20.0),
-                                child: Image.asset(
-                                  "asset/images/hodie.png",
-                                  // fit: BoxFit.cover,
-                                  width: double.infinity,
-                                  height: double.infinity,
-                                ),
-                              ),
-                            ),
-                          ),
-                          Positioned(
-                                right: 10.0,
-                                top: 10.0,
-                                child: Container(
-                                  padding: const EdgeInsets.all(5.0),
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const Hodies()),
+                            );
+                            // print("Container pressed!");
+                          },
+                          child: Padding(
+                            padding: const EdgeInsets.only(bottom: 10),
+                            child: Stack(
+                              children: [
+                                Container(
+                                  height: 300,
+                                  width: 180,
                                   decoration: BoxDecoration(
-                                    color: const Color.fromARGB(255, 83, 74, 81)
-                                        .withOpacity(0.5),
-                                    borderRadius: BorderRadius.circular(5.0),
+                                    border: Border.all(
+                                      color: Colors.black,
+                                      width: 2.0,
+                                    ),
+                                    borderRadius: BorderRadius.circular(20.0),
                                   ),
-                                  child: const Text(
-                                    "New",
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 18.0,
+                                  child: Padding(
+                                    padding: EdgeInsets.zero,
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(20.0),
+                                      child: Image.asset(
+                                        "asset/images/hodie.png",
+                                        // fit: BoxFit.cover,
+                                        width: double.infinity,
+                                        height: double.infinity,
+                                      ),
                                     ),
                                   ),
                                 ),
-                              ),
-                              Positioned(
-                                right: 20.0,
-                                // top: 10.0,
-                                bottom: 5,
-                                left: 20,
-                                child: Container(
-                                  padding: const EdgeInsets.all(5.0),
-                                  decoration: BoxDecoration(
-                                    color: const Color.fromARGB(255, 252, 205, 242)
-                                        .withOpacity(0.5),
-                                    borderRadius: BorderRadius.circular(5.0),
-                                  ),
-                                  child: const Column(
-                                    children: [
-                                      Column(
-                                        children: [
-                                          Text(
-                                            "Nike Hodie",
-                                            style: TextStyle(
-                                              color: Colors.black,
-                                              fontSize: 18,
-                                              fontWeight: FontWeight.w600,
-                                            ),
-                                          ),
-                                          Row(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.center,
-                                            children: [
-                                              Text(
-                                                "\$120.50",
-                                                style: TextStyle(
-                                                  color: Colors.black,
-                                                  fontSize: 18,
-                                                  fontWeight: FontWeight.w600,
-                                                ),
-                                              ),
-                                            ],
-                                          ),
-                                        ],
+                                Positioned(
+                                  right: 10.0,
+                                  top: 10.0,
+                                  child: Container(
+                                    padding: const EdgeInsets.all(5.0),
+                                    decoration: BoxDecoration(
+                                      color:
+                                          const Color.fromARGB(255, 83, 74, 81)
+                                              .withOpacity(0.5),
+                                      borderRadius: BorderRadius.circular(5.0),
+                                    ),
+                                    child: const Text(
+                                      "New",
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 18.0,
                                       ),
-                                    ],
+                                    ),
                                   ),
                                 ),
-                              ),
-                        ],
-                      ),
-            
+                                Positioned(
+                                  right: 20.0,
+                                  // top: 10.0,
+                                  bottom: 5,
+                                  left: 20,
+                                  child: Container(
+                                    padding: const EdgeInsets.all(5.0),
+                                    decoration: BoxDecoration(
+                                      color: const Color.fromARGB(
+                                              255, 252, 205, 242)
+                                          .withOpacity(0.5),
+                                      borderRadius: BorderRadius.circular(5.0),
+                                    ),
+                                    child: const Column(
+                                      children: [
+                                        Column(
+                                          children: [
+                                            Text(
+                                              "Nike Hodie",
+                                              style: TextStyle(
+                                                color: Colors.black,
+                                                fontSize: 18,
+                                                fontWeight: FontWeight.w600,
+                                              ),
+                                            ),
+                                            Row(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              children: [
+                                                Text(
+                                                  "\$120.50",
+                                                  style: TextStyle(
+                                                    color: Colors.black,
+                                                    fontSize: 18,
+                                                    fontWeight: FontWeight.w600,
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ],
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
                         ),
-                              
-                        ),
-                        
                         GestureDetector(
-                              onTap: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => const Glasses()),
-                                );
-                                // print("Container pressed!");
-                              },
-                              child:Padding(
-                          padding: const EdgeInsets.only(bottom: 10),
-                          child: Stack(
-                            children: [
-                              Container(
-                            height: 200,
-                            width: 180,
-                            decoration: BoxDecoration(
-                              border: Border.all(
-                                color: Colors.black,
-                                width: 2.0,
-                              ),
-                              borderRadius: BorderRadius.circular(20.0),
-                            ),
-                            child: Padding(
-                              padding: EdgeInsets.zero,
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(20.0),
-                                child: Image.asset(
-                                  "asset/images/glasses1.png",
-                                  // fit: BoxFit.cover,
-                                  width: double.infinity,
-                                  height: double.infinity,
-                                ),
-                              ),
-                            ),
-                          ),
-                          Positioned(
-                                right: 10.0,
-                                top: 10.0,
-                                child: Container(
-                                  padding: const EdgeInsets.all(5.0),
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const Glasses()),
+                            );
+                            // print("Container pressed!");
+                          },
+                          child: Padding(
+                            padding: const EdgeInsets.only(bottom: 10),
+                            child: Stack(
+                              children: [
+                                Container(
+                                  height: 200,
+                                  width: 180,
                                   decoration: BoxDecoration(
-                                    color: const Color.fromARGB(255, 83, 74, 81)
-                                        .withOpacity(0.5),
-                                    borderRadius: BorderRadius.circular(5.0),
+                                    border: Border.all(
+                                      color: Colors.black,
+                                      width: 2.0,
+                                    ),
+                                    borderRadius: BorderRadius.circular(20.0),
                                   ),
-                                  child: const Text(
-                                    "New",
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 18.0,
+                                  child: Padding(
+                                    padding: EdgeInsets.zero,
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(20.0),
+                                      child: Image.asset(
+                                        "asset/images/glasses1.png",
+                                        // fit: BoxFit.cover,
+                                        width: double.infinity,
+                                        height: double.infinity,
+                                      ),
                                     ),
                                   ),
                                 ),
-                              ),
-                              Positioned(
-                                right: 20.0,
-                                // top: 10.0,
-                                bottom: 5,
-                                left: 20,
-                                child: Container(
-                                  padding: const EdgeInsets.all(5.0),
-                                  decoration: BoxDecoration(
-                                    color: const Color.fromARGB(255, 252, 205, 242)
-                                        .withOpacity(0.5),
-                                    borderRadius: BorderRadius.circular(5.0),
-                                  ),
-                                  child: const Column(
-                                    children: [
-                                      Column(
-                                        children: [
-                                          Text(
-                                            "Glasses",
-                                            style: TextStyle(
-                                              color: Colors.black,
-                                              fontSize: 18,
-                                              fontWeight: FontWeight.w600,
-                                            ),
-                                          ),
-                                          Row(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.center,
-                                            children: [
-                                              Text(
-                                                "\$60.50",
-                                                style: TextStyle(
-                                                  color: Colors.black,
-                                                  fontSize: 18,
-                                                  fontWeight: FontWeight.w600,
-                                                ),
-                                              ),
-                                            ],
-                                          ),
-                                        ],
+                                Positioned(
+                                  right: 10.0,
+                                  top: 10.0,
+                                  child: Container(
+                                    padding: const EdgeInsets.all(5.0),
+                                    decoration: BoxDecoration(
+                                      color:
+                                          const Color.fromARGB(255, 83, 74, 81)
+                                              .withOpacity(0.5),
+                                      borderRadius: BorderRadius.circular(5.0),
+                                    ),
+                                    child: const Text(
+                                      "New",
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 18.0,
                                       ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  GestureDetector(
-                              onTap: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => const pants()),
-                                );
-                                // print("Container pressed!");
-                              },
-                              child:Padding(
-                          padding: const EdgeInsets.only(bottom: 10),
-                          child:Stack(
-                            children: [
-                              Container(
-                            height: 350,
-                            width: 180,
-                            decoration: BoxDecoration(
-                              border: Border.all(
-                                color: Colors.black,
-                                width: 2.0,
-                              ),
-                              borderRadius: BorderRadius.circular(20.0),
-                            ),
-                            child: Padding(
-                              padding: EdgeInsets.zero,
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(20.0),
-                                child: Image.asset(
-                                  "asset/images/pant1.png",
-                                  // fit: BoxFit.cover,
-                                  width: double.infinity,
-                                  height: double.infinity,
-                                ),
-                              ),
-                            ),
-                          ),
-                          Positioned(
-                                right: 10.0,
-                                top: 10.0,
-                                child: Container(
-                                  padding: const EdgeInsets.all(5.0),
-                                  decoration: BoxDecoration(
-                                    color: const Color.fromARGB(255, 83, 74, 81)
-                                        .withOpacity(0.5),
-                                    borderRadius: BorderRadius.circular(5.0),
-                                  ),
-                                  child: const Text(
-                                    "Resell",
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 18.0,
                                     ),
                                   ),
                                 ),
-                              ),
-                              Positioned(
-                                right: 20.0,
-                                // top: 10.0,
-                                bottom: 5,
-                                left: 20,
-                                child: Container(
-                                  padding: const EdgeInsets.all(5.0),
-                                  decoration: BoxDecoration(
-                                    color: const Color.fromARGB(255, 252, 205, 242)
-                                        .withOpacity(0.5),
-                                    borderRadius: BorderRadius.circular(5.0),
-                                  ),
-                                  child: const Column(
-                                    children: [
-                                      Column(
-                                        children: [
-                                          Text(
-                                            "Pants Cargo",
-                                            style: TextStyle(
-                                              color: Colors.black,
-                                              fontSize: 18,
-                                              fontWeight: FontWeight.w600,
-                                            ),
-                                          ),
-                                          Row(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.center,
-                                            children: [
-                                              Text(
-                                                "\$90.50",
-                                                style: TextStyle(
-                                                  color: Colors.black,
-                                                  fontSize: 18,
-                                                  fontWeight: FontWeight.w600,
-                                                ),
+                                Positioned(
+                                  right: 20.0,
+                                  // top: 10.0,
+                                  bottom: 5,
+                                  left: 20,
+                                  child: Container(
+                                    padding: const EdgeInsets.all(5.0),
+                                    decoration: BoxDecoration(
+                                      color: const Color.fromARGB(
+                                              255, 252, 205, 242)
+                                          .withOpacity(0.5),
+                                      borderRadius: BorderRadius.circular(5.0),
+                                    ),
+                                    child: const Column(
+                                      children: [
+                                        Column(
+                                          children: [
+                                            Text(
+                                              "Glasses",
+                                              style: TextStyle(
+                                                color: Colors.black,
+                                                fontSize: 18,
+                                                fontWeight: FontWeight.w600,
                                               ),
-                                            ],
-                                          ),
-                                        ],
-                                      ),
-                                    ],
+                                            ),
+                                            Row(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              children: [
+                                                Text(
+                                                  "\$60.50",
+                                                  style: TextStyle(
+                                                    color: Colors.black,
+                                                    fontSize: 18,
+                                                    fontWeight: FontWeight.w600,
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ],
+                                        ),
+                                      ],
+                                    ),
                                   ),
                                 ),
-                              ),
-            
-                        ],
-                      ),
-                    ),
-                  ),
-                        
-                        
+                              ],
+                            ),
+                          ),
+                        ),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const pants()),
+                            );
+                            // print("Container pressed!");
+                          },
+                          child: Padding(
+                            padding: const EdgeInsets.only(bottom: 10),
+                            child: Stack(
+                              children: [
+                                Container(
+                                  height: 350,
+                                  width: 180,
+                                  decoration: BoxDecoration(
+                                    border: Border.all(
+                                      color: Colors.black,
+                                      width: 2.0,
+                                    ),
+                                    borderRadius: BorderRadius.circular(20.0),
+                                  ),
+                                  child: Padding(
+                                    padding: EdgeInsets.zero,
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(20.0),
+                                      child: Image.asset(
+                                        "asset/images/pant1.png",
+                                        // fit: BoxFit.cover,
+                                        width: double.infinity,
+                                        height: double.infinity,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                Positioned(
+                                  right: 10.0,
+                                  top: 10.0,
+                                  child: Container(
+                                    padding: const EdgeInsets.all(5.0),
+                                    decoration: BoxDecoration(
+                                      color:
+                                          const Color.fromARGB(255, 83, 74, 81)
+                                              .withOpacity(0.5),
+                                      borderRadius: BorderRadius.circular(5.0),
+                                    ),
+                                    child: const Text(
+                                      "Resell",
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 18.0,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                Positioned(
+                                  right: 20.0,
+                                  // top: 10.0,
+                                  bottom: 5,
+                                  left: 20,
+                                  child: Container(
+                                    padding: const EdgeInsets.all(5.0),
+                                    decoration: BoxDecoration(
+                                      color: const Color.fromARGB(
+                                              255, 252, 205, 242)
+                                          .withOpacity(0.5),
+                                      borderRadius: BorderRadius.circular(5.0),
+                                    ),
+                                    child: const Column(
+                                      children: [
+                                        Column(
+                                          children: [
+                                            Text(
+                                              "Pants Cargo",
+                                              style: TextStyle(
+                                                color: Colors.black,
+                                                fontSize: 18,
+                                                fontWeight: FontWeight.w600,
+                                              ),
+                                            ),
+                                            Row(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              children: [
+                                                Text(
+                                                  "\$90.50",
+                                                  style: TextStyle(
+                                                    color: Colors.black,
+                                                    fontSize: 18,
+                                                    fontWeight: FontWeight.w600,
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ],
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
                       ],
                     ),
                   ],

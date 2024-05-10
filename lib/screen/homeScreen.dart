@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/page/All.dart';
 import 'package:flutter_application_1/screen/body.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -26,7 +27,6 @@ class _HomeScreenState extends State<HomeScreen> {
           Container(
             height: 50,
             width: 140,
-            
             child: const Center(
               child: Text(
                 "Home",
@@ -57,12 +57,21 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
           const SizedBox(width: 15),
-          Container(
-            height: 50,
-            width: 50,
-            child: Image.asset(
-              "asset/images/profileboy.png",
-              fit: BoxFit.cover,
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const All()),
+              );
+              print("Container pressed!");
+            },
+            child: Container(
+              height: 50,
+              width: 50,
+              child: Image.asset(
+                "asset/images/profileboy.png",
+                fit: BoxFit.cover,
+              ),
             ),
           ),
           SizedBox(width: 10),
