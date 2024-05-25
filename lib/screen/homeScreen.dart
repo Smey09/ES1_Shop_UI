@@ -23,13 +23,16 @@ class _HomeScreenState extends State<HomeScreen> {
               color: Color.fromARGB(255, 216, 169, 13),
             ),
           ),
-          SizedBox(width: 30),
+          SizedBox(
+            width: 100,
+          ),
           Container(
             height: 50,
-            width: 140,
+            width: 80,
             child: const Center(
               child: Text(
                 "Home",
+                textAlign: TextAlign.center, // Aligns text to the center
                 style: TextStyle(
                   fontWeight: FontWeight.w800,
                   fontSize: 28,
@@ -37,6 +40,20 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
           ),
+          // SizedBox(width: 10),
+          // Container(
+          //   height: 50,
+          //   width: 140,
+          //   child: const Center(
+          //     child: Text(
+          //       "Home",
+          //       style: TextStyle(
+          //         fontWeight: FontWeight.w800,
+          //         fontSize: 28,
+          //       ),
+          //     ),
+          //   ),
+          // ),
           SizedBox(width: 50),
           Container(
             height: 45,

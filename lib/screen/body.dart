@@ -21,7 +21,7 @@ class _BodyScreenState extends State<BodyScreen> {
         FocusScope.of(context).unfocus();
       },
       child: Scaffold(
-        // backgroundColor: const Color.fromARGB(255, 175, 241, 244),
+        backgroundColor: Color.fromARGB(255, 255, 255, 255),
 
         body: SingleChildScrollView(
           // scrollDirection: Axis.horizontal,
@@ -33,16 +33,16 @@ class _BodyScreenState extends State<BodyScreen> {
               //         image: NetworkImage("https://www.pexels.com/photo/lighthouse-during-golden-hour-1535162/"),
               //         fit: BoxFit.cover, // Adjust the fit as needed
               //       ),
-              gradient: LinearGradient(
-                colors: [
-                  Color.fromARGB(255, 232, 215, 235),
-                  Color.fromARGB(255, 239, 179, 199),
-                  Color.fromARGB(255, 237, 226, 226),
-                  Colors.white,
-                ],
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-              ),
+              // gradient: LinearGradient(
+              //   colors: [
+              //     Color.fromARGB(255, 232, 215, 235),
+              //     Color.fromARGB(255, 239, 179, 199),
+              //     Color.fromARGB(255, 237, 226, 226),
+              //     Colors.white,
+              //   ],
+              //   begin: Alignment.topCenter,
+              //   end: Alignment.bottomCenter,
+              // ),
             ),
             child: Column(
               children: [
@@ -82,122 +82,6 @@ class _BodyScreenState extends State<BodyScreen> {
                 ),
                 // slide: Slideshow(context: context),
                 const Slideshow(),
-                // Add padding
-                // Row(
-                //   children: [
-                //     Container(
-                //       padding: EdgeInsets.all(20),
-                //       height: 250,
-                //       child: ImageSlideshow(
-                //         indicatorColor: Colors.blue,
-                //         onPageChanged: (value) => debugPrint(
-                //             'Page changed: $value'), // Use arrow function for simpler syntax
-                //         autoPlayInterval: 3000,
-                //         isLoop: true,
-                //         children: [
-                //           Image.asset(
-                //             'assets/icons/Footware.png', // Assuming assets folder is named "assets"
-                //             fit: BoxFit.cover,
-                //           ),
-                //           Image.asset(
-                //             'assets/icons/Footware.png',
-                //             fit: BoxFit.cover,
-                //           ),
-                //           Image.asset(
-                //             'assets/icons/Footware.png',
-                //             fit: BoxFit.cover,
-                //           ),
-                //         ],
-                //       ),
-                //     ),
-                //   ],
-                // ),
-
-                // Row(
-                //   children: [
-                //     Expanded(
-                //       child: SingleChildScrollView(
-                //         scrollDirection: Axis.horizontal,
-                //         child: Row(
-                //           children: [
-                //             GestureDetector(
-                //               onTap: () {
-                //                 Navigator.push(
-                //                   context,
-                //                   MaterialPageRoute(
-                //                       builder: (context) => const shoses()),
-                //                 );
-                //                 print("Container pressed!");
-                //               },
-                //         //       child: Padding(
-                //         // padding: const EdgeInsets.only(left: 20, right: 20),
-                //               child: Container(
-                //                 height: 150,
-                //                 width: 360,
-                //                 margin: const EdgeInsets.all(10.0),
-                //                 decoration: BoxDecoration(
-                //                   border: Border.all(
-                //                     color: Colors.black,
-                //                     width: 2.0,
-                //                   ),
-                //                   borderRadius: BorderRadius.circular(20.0),
-                //                 ),
-                //                 child: Padding(
-                //                   padding: EdgeInsets.zero,
-                //                   child: ClipRRect(
-                //                     borderRadius: BorderRadius.circular(20.0),
-                //                     child: Image.network(
-                //                       "https://th.bing.com/th/id/OIP.J-6HcQwYLf_Mr1mx-rkvMgHaEK?w=302&h=180&c=7&r=0&o=5&dpr=2.5&pid=1.7",
-                //                       fit: BoxFit.cover,
-                //                       width: double.infinity,
-                //                       height: double.infinity,
-                //                     ),
-                //                   ),
-                //                 ),
-                //               ),
-                //             ),
-                //             GestureDetector(
-                //               onTap: () {
-                //                 Navigator.push(
-                //                   context,
-                //                   MaterialPageRoute(
-                //                       builder: (context) => const Hodies()),
-                //                 );
-                //                 print("Container pressed!");
-                //               },
-                //         //       child: Padding(
-                //         // padding: const EdgeInsets.only(left: 20, right: 20),
-                //               child: Container(
-                //                 height: 150,
-                //                 width: 360,
-                //                 decoration: BoxDecoration(
-                //                   border: Border.all(
-                //                     color: Colors.black,
-                //                     width: 2.0,
-                //                   ),
-                //                   borderRadius: BorderRadius.circular(20.0),
-                //                 ),
-                //                 child: Padding(
-                //                   padding: EdgeInsets.zero,
-                //                   child: ClipRRect(
-                //                     borderRadius: BorderRadius.circular(20.0),
-                //                     child: Image.network(
-                //                       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFx90Svm6r_ORNO1Kp-BscrYYOst8OOgHFIA&s",
-                //                       fit: BoxFit.cover,
-                //                       width: double.infinity,
-                //                       height: double.infinity,
-                //                     ),
-                //                   ),
-                //                 ),
-                //               ),
-
-                //             ),
-                //           ],
-                //         ),
-                //       ),
-                //     ),
-                //   ],
-                // ),
                 Row(
                   children: [
                     Expanded(

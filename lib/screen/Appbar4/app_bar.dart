@@ -1,6 +1,5 @@
 import 'package:bottom_bar/bottom_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/page/slide.dart';
 import 'package:flutter_application_1/screen/Appbar4/Funtion3/Buy.dart';
 import 'package:flutter_application_1/screen/Appbar4/Funtion3/Favorite.dart';
 import 'package:flutter_application_1/screen/Appbar4/Funtion3/Setting.dart';
@@ -22,10 +21,9 @@ class _HomeBarState extends State<HomeBar> {
         controller: _pageController,
         children: [
           HomeScreen(),
-          Slideshow(),
           Favorites(),
           Buys(),
-          settings(),
+          Settings(),
         ],
         onPageChanged: (index) {
           setState(() => _currentPage = index);
